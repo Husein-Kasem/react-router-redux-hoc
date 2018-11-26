@@ -1,7 +1,11 @@
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom'
+import {Link, NavLink, withRouter} from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = (/*props*/) => {
+    // setTimeout(()=>{
+    //     props.history.push('/about')
+    // }, 2000);
+
   return (
     <nav className="nav-wrapper red darken-3">
         <div className="container">
@@ -15,5 +19,6 @@ const Navbar = () => {
     </nav>
   )
 }
-
-export default Navbar;
+// higher order components withRoute 
+// it adds the props of NavLink and Link to a component
+export default withRouter(Navbar);
