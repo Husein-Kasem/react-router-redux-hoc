@@ -16,3 +16,15 @@ code {
 a .active {
   background-color: red;
 }
+
+.home .post img {
+  position: absolute;
+  top: 20%;
+  left: -100px;
+  opacity: 0.6;
+}
+
+.home .post {
+  overflow: hidden;
+  padding-left: 80px;
+}

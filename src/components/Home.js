@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 
 import Preloader from "./Preloader"
 
+import Pokeball from "../images/pokeball.png"
+
 class Home extends Component {
   state = {
     posts: []
@@ -24,9 +26,10 @@ class Home extends Component {
       postList = posts.map(post => {
         return (
           <div className="post card" key={post.id}>
+            <img src={Pokeball} alt="A pokeball" />
             <div className="card-content">
               <Link to={"/posts/" + post.id}>
-                <span className="card-title">{post.title}</span>
+                <span className="card-title red-text">{post.title}</span>
               </Link>
               <p>{post.body}</p>
             </div>
@@ -38,7 +41,7 @@ class Home extends Component {
     }
 
     return (
-      <div className="container">
+      <div className="container home">
         <h4 className="center">Home</h4>
         {postList}
       </div>
