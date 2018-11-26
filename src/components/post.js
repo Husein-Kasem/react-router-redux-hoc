@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import axios from "axios"
+import Preloader from "./Preloader"
+
 export default class post extends Component {
   state = {
     post: null
@@ -22,7 +24,9 @@ export default class post extends Component {
         <p>{this.state.post.body}</p>
       </div>
     ) : (
-      <div className="center">Loading post...</div>
+      <div className="center">
+        <Preloader />
+      </div>
     )
 
     return <div className="container">{post}</div>
