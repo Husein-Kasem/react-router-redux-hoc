@@ -19,6 +19,8 @@ const Navbar = (/*props*/) => {
     </nav>
   )
 }
+// higher order components are functions that adds features to a components
+
 // higher order components withRoute 
 // it adds the props of NavLink and Link to a component
 export default withRouter(Navbar);
