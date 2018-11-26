@@ -14,7 +14,7 @@ const Rainbow = (WrappedComponent)=>{
     return (props) =>{
         return(
             <div className={className}>
-                <wrappedComponent{...props}/>
+                <WrappedComponent{...props}/>
             </div>
         )
     }

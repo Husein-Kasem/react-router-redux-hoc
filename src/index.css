@@ -13,6 +13,6 @@ code {
     monospace;
 }
 
-.active{
+a .active {
   background-color: red;
 }
