@@ -1,26 +1,26 @@
 import React, { Component } from "react"
-import axios from "axios"
+// import axios from "axios"
 import { Link } from "react-router-dom"
-
 import Preloader from "./Preloader"
-
 import Pokeball from "../images/pokeball.png"
+import { connect } from "react-redux"
 
 class Home extends Component {
-  state = {
-    posts: []
-  }
+  // state = {
+  //   posts: []
+  // }
 
-  componentDidMount() {
-    axios.get("https://jsonplaceholder.typicode.com/posts").then(res => {
-      this.setState({
-        posts: res.data.slice(0, 15)
-      })
-    })
-  }
+  // componentDidMount() {
+  //   axios.get("https://jsonplaceholder.typicode.com/posts").then(res => {
+  //     this.setState({
+  //       posts: res.data.slice(0, 15)
+  //     })
+  //   })
+  // }
 
   render() {
-    const { posts } = this.state
+    //const { posts } = this.state
+    const { posts } = this.props
     let postList = null
     if (posts.length) {
       postList = posts.map(post => {
@@ -49,4 +49,17 @@ class Home extends Component {
   }
 }
 
-export default Home
+//Function to map the state that we need to the props of the component
+const mapStateToProp = state => {
+  return {
+    posts: state.posts
+  }
+}
+
+//connect is a function that returns a HOC
+//the connect function takes a fuction as an argument
+//that defines wich data we need to map from the state
+//of the store to the props of the component
+
+//then the HOC is wrapping the Home component
+export default connect(mapStateToProp)(Home)
